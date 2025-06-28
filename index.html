@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Said Mohamed Ali - IT Project Leader & IA Expert | Natixis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003366; /* Bleu Natixis */
+            --secondary: #FF9900; /* Orange */
+            --ai-color: #6f42c1; /* Violet IA */
+            --dark: #0a192f;
+            --light: #f5f7fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Exo 2', 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a192f 0%, #172a45 100%);
+            color: #e6f1ff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-attachment: fixed;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(111, 66, 193, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(111, 66, 193, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(111, 66, 193, 0); }
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(to right, var(--dark) 0%, var(--primary) 100%);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 153, 0, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 51, 102, 0.2) 0%, transparent 30%);
+            z-index: 0;
+        }
+        
+        .profile-container {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--secondary);
+            object-fit: cover;
+            margin: 0 auto 20px;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .pulse-ring {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 2px solid var(--secondary);
+            animation: pulse 3s infinite;
+            z-index: -1;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #e6f1ff, #a8d0ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+        
+        .tagline {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+            padding: 0 20px;
+        }
+        
+        .ai-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--ai-color), #8a2be2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            animation: gradient 3s ease infinite;
+            background-size: 200% 200%;
+        }
+        
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: float 2s ease-in-out infinite;
+            color: var(--secondary);
+            font-size: 2rem;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-header h3 {
+            font-size: 2.5rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-header h3::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #a8d0ff;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 80px;
+            width: 50%;
+            padding: 0 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: 0;
+            width: 100px;
+            padding: 10px;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -120px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -120px;
+        }
+        
+        .achievement-card {
+            background: rgba(10, 25, 47, 0.8);
+            border: 1px solid rgba(100, 149, 237, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+        
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--secondary);
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+        
+        .achievement-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .achievement-card ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .achievement-card li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .achievement-card li::before {
+            content: '▹';
+            color: var(--secondary);
+            position: absolute;
+            left: -20px;
+        }
+        
+        .tech-tag {
+            display: inline-block;
+            background: rgba(0, 51, 102, 0.5);
+            padding: 5px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(100, 149, 237, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-tag:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: scale(1.1);
+        }
+        
+        /* Expertise Section */
+        .expertise {
+            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.9), rgba(23, 42, 69, 0.9));
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .expertise::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 153, 0, 0.05) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(0, 51, 102, 0.1) 0%, transparent 30%);
+            z-index: -1;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .skill-card {
+            background: rgba(0, 33, 71, 0.4);
+            border: 1px solid rgba(100, 149, 237, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .skill-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            background: rgba(0, 51, 102, 0.6);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .skill-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .skill-card p {
+            color: #a8d0ff;
+        }
+        
+        /* Section IA */
+        .ai-section {
+            background: linear-gradient(135deg, #1a0933 0%, #2d1b47 100%);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ai-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(111, 66, 193, 0.2) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(44, 21, 94, 0.3) 0%, transparent 30%);
+            z-index: 0;
+        }
+        
+        .ai-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .ai-card {
+            background: rgba(30, 15, 60, 0.7);
+            border: 1px solid rgba(149, 66, 237, 0.3);
+            border-radius: 10px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            backdrop-filter: blur(10px);
+        }
+        
+        .ai-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .ai-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(111, 66, 193, 0.3);
+            border-color: var(--ai-color);
+        }
+        
+        .ai-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #c792ea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .ai-card h4 i {
+            color: var(--ai-color);
+        }
+        
+        .prompt-example {
+            background: rgba(50, 25, 90, 0.5);
+            border-left: 3px solid var(--ai-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 5px 5px 0;
+            font-family: monospace;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        
+        .prompt-example::before {
+            content: "Prompt:";
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: var(--ai-color);
+            padding: 0 5px;
+            font-size: 0.8rem;
+            border-radius: 3px;
+        }
+        
+        .ai-tag {
+            display: inline-block;
+            background: rgba(111, 66, 193, 0.3);
+            padding: 5px 15px;
+            margin: 5px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(149, 66, 237, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .ai-tag:hover {
+            background: var(--ai-color);
+            transform: scale(1.1);
+        }
+        
+        .ai-projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .ai-project {
+            background: rgba(40, 20, 70, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(149, 66, 237, 0.2);
+        }
+        
+        .ai-project h5 {
+            color: #c792ea;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #a8d0ff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 12px 25px;
+            border-radius: 30px;
+            border: 1px solid rgba(100, 149, 237, 0.3);
+            background: rgba(0, 33, 71, 0.3);
+        }
+        
+        .contact-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .contact-link.email {
+            background: rgba(255, 153, 0, 0.1);
+            border-color: rgba(255, 153, 0, 0.3);
+        }
+        
+        .contact-link.email:hover {
+            background: var(--secondary);
+            color: #1a2e47;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a8d0ff;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 20px;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(even),
+            .timeline-item:nth-child(odd) {
+                left: 0;
+            }
+            
+            .timeline-year {
+                left: 0;
+                top: -20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-year {
+                right: auto;
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-year {
+                left: 0;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .section-header h3 {
+                font-size: 2rem;
+            }
+            
+            .skills-grid, .ai-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header avec animation de flottement -->
+    <header>
+        <div class="profile-container">
+            <div class="pulse-ring"></div>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=1000" alt="Said Mohamed Ali" class="profile-pic">
+            <h1>SAID MOHAMED ALI</h1>
+            <h2>IT Project Leader & IA Expert | Natixis</h2>
+            <p class="tagline">Expert en solutions innovantes pour la finance technologique avec 15+ ans d'expérience dans le développement et la gestion de projets complexes</p>
+            <div class="ai-badge">
+                <i class="fas fa-robot"></i> Spécialiste en Intelligence Artificielle
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- Timeline animée -->
+    <section id="journey">
+        <div class="section-header">
+            <h3>Mon Parcours Professionnel</h3>
+            <p>De développeur passionné à leader de projets innovants dans le secteur financier</p>
+        </div>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">2007</div>
+                <div class="achievement-card">
+                    <h4>Apprenti Développeur - Soft Commodities</h4>
+                    <ul>
+                        <li>Découverte de l'interface Technologie/Finance</li>
+                        <li>Développement d'outils de pricing</li>
+                        <li>Première expérience en finance de marché</li>
+                    </ul>
+                    <div>
+                        <span class="tech-tag">Finance</span>
+                        <span class="tech-tag">Développement</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2010</div>
+                <div class="achievement-card">
+                    <h4>Natixis - Développeur Junior (Equity & Derivative)</h4>
+                    <ul>
+                        <li>Migration vers TIBCO Datasynapse pour SOPHIS INC.</li>
+                        <li>Réduction du temps de calcul de 7h à 3h</li>
+                        <li>Solution front-to-back-office pour services financiers</li>
+                    </ul>
+                    <div>
+                        <span class="tech-tag">TIBCO</span>
+                        <span class="tech-tag">SOPHIS</span>
+                        <span class="tech-tag">Optimisation</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2012</div>
+                <div class="achievement-card">
+                    <h4>Thomson Reuters - Calculatrice Financière</h4>
+                    <ul>
+                        <li>Migration des calculateurs FRN (C#/C++)</li>
+                        <li>Développement du calculateur FX Options</li>
+                        <li>Clients: JP Morgan, Goldman Sachs</li>
+                        <li>Algorithmes complexes avec contraintes</li>
+                    </ul>
+                    <div>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">FX Options</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2016</div>
+                <div class="achievement-card">
+                    <h4>Natixis - IT Project Leader</h4>
+                    <ul>
+                        <li>Conduite de projets d'innovation technologique</li>
+                        <li>Implémentation de solutions distribuées</li>
+                        <li>Management d'équipes transverses</li>
+                        <li>Gestion de budgets et délais complexes</li>
+                        <li>Intégration de solutions IA dans les processus financiers</li>
+                    </ul>
+                    <div>
+                        <span class="tech-tag">Gestion de projet</span>
+                        <span class="tech-tag">Innovation</span>
+                        <span class="tech-tag">Leadership</span>
+                        <span class="tech-tag">IA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Expertise avec animations -->
+    <section class="expertise">
+        <div class="section-header">
+            <h3>Expertise Technique</h3>
+            <p>Compétences clés développées au cours de 15 ans dans la finance technologique</p>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h4>Architecture Distribuée</h4>
+                <p>Expert en solutions distribuées haute performance pour les calculs financiers</p>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4>Solutions Financières</h4>
+                <p>Conception d'outils de pricing, risque et trading pour marchés complexes</p>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h4>Gestion de Projet</h4>
+                <p>Pilotage de projets technologiques dans des environnements à haute pression</p>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <h4>Leadership Technique</h4>
+                <p>Management d'équipes pluridisciplinaires et gestion des parties prenantes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section IA - Nouvelle section ajoutée -->
+    <section id="ai-section" class="ai-section">
+        <div class="section-header">
+            <h3>Intelligence Artificielle & Innovation</h3>
+            <p>Exploration des possibilités de l'IA dans la finance et au-delà</p>
+        </div>
+        
+        <div class="ai-grid">
+            <div class="ai-card">
+                <h4><i class="fas fa-brain"></i> Prompt Engineering</h4>
+                <p>Expert en conception de prompts efficaces pour les modèles d'IA générative</p>
+                
+                <div class="prompt-example">
+                    "En tant qu'expert en finance et IA, génère un rapport d'analyse de risque pour un portefeuille diversifié. Inclus une matrice SWOT, des recommandations stratégiques basées sur les tendances du marché, et des scénarios d'impact économique pour les 12 prochains mois."
+                </div>
+                
+                <p>Domaines d'expertise:</p>
+                <div>
+                    <span class="ai-tag">Optimisation de prompts</span>
+                    <span class="ai-tag">Fine-tuning</span>
+                    <span class="ai-tag">Chain-of-Thought</span>
+                    <span class="ai-tag">Few-shot learning</span>
+                </div>
+            </div>
+            
+            <div class="ai-card">
+                <h4><i class="fas fa-project-diagram"></i> Projets IA</h4>
+                
+                <div class="ai-projects">
+                    <div class="ai-project">
+                        <h5><i class="fas fa-chart-bar"></i> Predictive Analytics</h5>
+                        <p>Modèles prédictifs pour les marchés de commodities avec TensorFlow</p>
+                    </div>
+                    
+                    <div class="ai-project">
+                        <h5><i class="fas fa-robot"></i> Automatisation Financière</h5>
+                        <p>Système automatisé d'analyse de rapports financiers avec NLP</p>
+                    </div>
+                    
+                    <div class="ai-project">
+                        <h5><i class="fas fa-shield-alt"></i> Détection d'Anomalies</h5>
+                        <p>Solution de détection de fraude avec réseaux de neurones</p>
+                    </div>
+                    
+                    <div class="ai-project">
+                        <h5><i class="fas fa-comments"></i> Chatbots Financiers</h5>
+                        <p>Assistants virtuels pour conseillers financiers avec GPT-4</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ai-card">
+                <h4><i class="fas fa-tools"></i> Outils & Technologies</h4>
+                <p>Stack technologique pour les projets d'IA:</p>
+                
+                <div style="margin-top: 20px;">
+                    <span class="ai-tag">Python</span>
+                    <span class="ai-tag">TensorFlow</span>
+                    <span class="ai-tag">PyTorch</span>
+                    <span class="ai-tag">Hugging Face</span>
+                    <span class="ai-tag">LangChain</span>
+                    <span class="ai-tag">OpenAI API</span>
+                    <span class="ai-tag">LLAMA 2</span>
+                    <span class="ai-tag">RAG</span>
+                    <span class="ai-tag">Vector DB</span>
+                </div>
+                
+                <div style="margin-top: 25px;">
+                    <h4><i class="fas fa-lightbulb"></i> Cas d'Usage Finance</h4>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Prédiction de tendances de marché</li>
+                        <li>Génération de rapports automatiques</li>
+                        <li>Optimisation de portefeuilles</li>
+                        <li>Analyse de sentiment en temps réel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer avec coordonnées -->
+    <footer>
+        <div class="section-header">
+            <h3>Contact</h3>
+            <p>Disponible pour des opportunités de collaboration et d'innovation</p>
+        </div>
+        
+        <div class="contact-links">
+            <a href="https://linkedin.com" class="contact-link">
+                <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="mailto:saidkove@gmail.com" class="contact-link email">
+                <i class="fas fa-envelope"></i> saidkove@gmail.com
+            </a>
+            <a href="https://github.com" class="contact-link">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+        </div>
+        
+        <div class="copyright">
+            © 2023 Said Mohamed Ali. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script>
+        // Animation au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation des éléments de la timeline
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const skillCards = document.querySelectorAll('.skill-card');
+            const aiCards = document.querySelectorAll('.ai-card');
+            
+            // Fonction pour vérifier si un élément est visible
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.75 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Fonction pour gérer les animations au défilement
+            function handleScrollAnimations() {
+                timelineItems.forEach(item => {
+                    if (isElementInViewport(item)) {
+                        item.classList.add('visible');
+                    }
+                });
+                
+                skillCards.forEach((card, index) => {
+                    if (isElementInViewport(card)) {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 200);
+                    }
+                });
+                
+                aiCards.forEach((card, index) => {
+                    if (isElementInViewport(card)) {
+                        setTimeout(() => {
+                            card.classList.add('visible');
+                        }, index * 200);
+                    }
+                });
+            }
+            
+            // Initial check
+            handleScrollAnimations();
+            
+            // Écouter l'événement de défilement
+            window.addEventListener('scroll', handleScrollAnimations);
+            
+            // Animation du défilement vers le bas
+            document.querySelector('.scroll-down').addEventListener('click', function() {
+                window.scrollTo({
+                    top: document.querySelector('#journey').offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Animation des tags au survol
+            const techTags = document.querySelectorAll('.tech-tag, .ai-tag');
+            techTags.forEach(tag => {
+                tag.addEventListener('mouseover', function() {
+                    this.style.transform = 'scale(1.1)';
+                    if (this.classList.contains('ai-tag')) {
+                        this.style.backgroundColor = 'var(--ai-color)';
+                    } else {
+                        this.style.backgroundColor = 'var(--secondary)';
+                    }
+                    this.style.color = 'var(--dark)';
+                });
+                
+                tag.addEventListener('mouseout', function() {
+                    this.style.transform = 'scale(1)';
+                    if (this.classList.contains('ai-tag')) {
+                        this.style.backgroundColor = 'rgba(111, 66, 193, 0.3)';
+                    } else {
+                        this.style.backgroundColor = 'rgba(0, 51, 102, 0.5)';
+                    }
+                    this.style.color = 'white';
+                });
+            });
+        });
+    </script>
+</body>
+                          </html>
